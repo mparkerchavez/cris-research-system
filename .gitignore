@@ -1,0 +1,14 @@
+# Ignore local OS and tool artifacts that should not be versioned.
+.DS_Store
+**/.DS_Store
+.claude/
+.cris_cache/
+.trash/
+
+# Common local environment and dependency folders.
+.env
+.env.local
+**/.env
+**/.env.local
+node_modules/
+**/node_modules/
