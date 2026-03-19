@@ -1,0 +1,17 @@
+{
+  "name": "cris-system",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "convex dev",
+    "migration:sources": "node --experimental-strip-types migration/01_migrate_sources.ts",
+    "migration:tags": "node --experimental-strip-types migration/03_migrate_tags.ts",
+    "migration:datapoints": "node --experimental-strip-types migration/02_migrate_datapoints.ts",
+    "migration:weekly": "node --experimental-strip-types migration/04_migrate_weekly_learnings.ts",
+    "migration:validate:phase1b": "node --experimental-strip-types migration/validate_phase1b.ts"
+  },
+  "dependencies": {
+    "convex": "^1.26.2"
+  }
+}

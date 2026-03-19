@@ -1,0 +1,81 @@
+# Current Synthesis Citation Gap Report
+
+- Date: 2026-02-15
+- Source file: `06_Current_Understanding/Current_Synthesis.md`
+- Linked keys: 16
+- Unresolved keys: 53
+
+## Linked via Current Resolver
+
+- `AINewsStrategyDaily_OpenClawAgentsAnalysis_2026-02-13` -> `02_Extractions/2026-02/AINewsStrategyDaily_OpenClawAgentsAnalysis_2026-02-13.md`
+- `Anthropic_ContextCaching_2026-02-11` -> `02_Extractions/2026-02/Anthropic_AgenticCodingTrendsReport_2026-02-11.md`
+- `Anthropic_SpecificationScaling_2026-02-11` -> `02_Extractions/2026-02/Anthropic_AgenticCodingTrendsReport_2026-02-11.md`
+- `Anthropic_TierCapability_2026-02-11` -> `02_Extractions/2026-02/Anthropic_AgenticCodingTrendsReport_2026-02-11.md`
+- `Every_ClaudeCodeTransformingFinance_2026-02-13` -> `02_Extractions/2026-02/Every_ClaudeCodeTransformingFinance_2026-02-13.md`
+- `Every_TheTwoSliceTeam_2026-02-14` -> `02_Extractions/2026-02/Every_TheTwoSliceTeam_2026-02-14.md`
+- `FinServ_AgentDeployment_2026-02-11` -> `02_Extractions/2026-02/Every_ClaudeCodeTransformingFinance_2026-02-13.md`
+- `METR_MeasuringTimeHorizonUsingClaudeCodeAndCodex_2026-02-14` -> `02_Extractions/2026-02/METR_MeasuringTimeHorizonUsingClaudeCodeAndCodex_2026-02-14.md`
+- `METR_ScaffoldTransfer_2026-02-09` -> `02_Extractions/2026-02/METR_MeasuringTimeHorizonUsingClaudeCodeAndCodex_2026-02-14.md`
+- `OpenAI_ComputeCosts_2026-02-13` -> `02_Extractions/2026-02/AINewsStrategyDaily_OpenClawAgentsAnalysis_2026-02-13.md`
+- `OpenAI_CostStratification_2026-02-13` -> `02_Extractions/2026-02/AINewsStrategyDaily_OpenClawAgentsAnalysis_2026-02-13.md`
+- `OpenAI_InfrastructureProjection_2026-02-13` -> `02_Extractions/2026-02/AINewsStrategyDaily_OpenClawAgentsAnalysis_2026-02-13.md`
+- `OpenAI_InternalCodexAdoption_2026-02-13` -> `02_Extractions/2026-02/AINewsStrategyDaily_OpenClawAgentsAnalysis_2026-02-13.md`
+- `TwoSlice_AgentDeployment_2026-02-10` -> `02_Extractions/2026-02/Every_TheTwoSliceTeam_2026-02-14.md`
+- `YC_AgentWorkflowAdoption_2026-02-12` -> `02_Extractions/2026-02/YCombinator_TheNewWayToBuildAStartup_2026-02-14.md`
+- `YCombinator_TheNewWayToBuildAStartup_2026-02-14` -> `02_Extractions/2026-02/YCombinator_TheNewWayToBuildAStartup_2026-02-14.md`
+
+## Still Unresolved
+
+- `Accenture_DIYFailure_2026-02-10` (No extraction candidate matched source key)
+- `Anthropic_CoworkLaunch_2026-02-13` (No extraction candidate matched source key)
+- `Anthropic_InferencePivot_2026-02-12` (No extraction candidate matched source key)
+- `Anthropic_PluginArchitecture_2026-02-12` (No extraction candidate matched source key)
+- `Anthropic_SDFT_2026-02-10` (No extraction candidate matched source key)
+- `BCG_EnterpriseScale_2026-02-12` (No extraction candidate matched source key)
+- `Bain_ValueModelShift_2026-02-08` (No extraction candidate matched source key)
+- `Bessemer_SaaSRepricing_2026-02-13` (No extraction candidate matched source key)
+- `Bloomberg_InferenceCapital_2026-02-12` (No extraction candidate matched source key)
+- `Brookings_LayoffTracking_2026-02-13` (No extraction candidate matched source key)
+- `Cerebras_NeuromorphicEfficiency_2026-02-10` (No extraction candidate matched source key)
+- `DeepMind_ReasoningLimits_2026-02-12` (No extraction candidate matched source key)
+- `Forrester_CovekAIAdoption_2026-02-07` (No extraction candidate matched source key)
+- `Forrester_CoworkerDuality_2026-02-11` (No extraction candidate matched source key)
+- `Forrester_DecisionTraceability_2026-02-09` (No extraction candidate matched source key)
+- `Forrester_GovernanceImpact_2026-02-09` (No extraction candidate matched source key)
+- `Gartner_ObservabilityGap_2026-02-10` (No extraction candidate matched source key)
+- `Gartner_OrganizationalReadiness_2026-02-09` (No extraction candidate matched source key)
+- `Goldman_Sachs_ConsolidationTimeline_2026-02-10` (No extraction candidate matched source key)
+- `Graphcore_SpecializedHardware_2026-02-08` (No extraction candidate matched source key)
+- `HBR_MetaphorEngagement_2026-02-09` (No extraction candidate matched source key)
+- `Harris_ApprenticeshipCollapse_2026-02-11` (No extraction candidate matched source key)
+- `Heinrich_WriterCurator_2026-02-10` (No extraction candidate matched source key)
+- `METR_BenchmarkError_2026-02-09` (No extraction candidate matched source key)
+- `METR_DomainVariance_2026-02-10` (No extraction candidate matched source key)
+- `METR_MeasurementFramework_2026-02-09` (No extraction candidate matched source key)
+- `METR_ScaffoldAutonomy_2026-02-10` (No extraction candidate matched source key)
+- `Maltbook_EmergentBehaviors_2026-02-08` (No extraction candidate matched source key)
+- `McKinsey_AgentProductivity_2026-02-08` (No extraction candidate matched source key)
+- `McKinsey_BarrierPerception_2026-02-08` (No extraction candidate matched source key)
+- `McKinsey_DataQualityBottleneck_2026-02-09` (No extraction candidate matched source key)
+- `Microsoft_SuperintendentDeployment_2026-02-10` (No extraction candidate matched source key)
+- `Mollick_EnergyConstraint_2026-02-12` (No extraction candidate matched source key)
+- `Mollick_TimeToProductivity_2026-02-12` (No extraction candidate matched source key)
+- `Morgan_Stanley_PECompression_2026-02-12` (No extraction candidate matched source key)
+- `NIST_SpecVulnerability_2026-02-11` (No extraction candidate matched source key)
+- `OpenAI_SpecBrittleness_2026-02-12` (No extraction candidate matched source key)
+- `OpenClaw_FakeAccounts_2026-02-09` (No extraction candidate matched source key)
+- `PEW_GeopoliticalDivergence_2026-02-13` (No extraction candidate matched source key)
+- `PWC_AutonomyExpectations_2026-02-13` (No extraction candidate matched source key)
+- `Palo_Alto_ZeroTrustAgents_2026-02-10` (No extraction candidate matched source key)
+- `Silvio_DatacenterTimeline_2026-02-11` (No extraction candidate matched source key)
+- `Snowflake_DeploymentVariance_2026-02-11` (No extraction candidate matched source key)
+- `Sonatype_MaliciousPackages_2026-02-11` (No extraction candidate matched source key)
+- `Stanford_NonTechCoding_2026-02-06` (No extraction candidate matched source key)
+- `Stanford_YouthLaborMarket_2026-02-12` (No extraction candidate matched source key)
+- `Stripe_CustomOrchestration_2026-02-12` (No extraction candidate matched source key)
+- `Suleyman_TimingProjection_2026-02-12` (No extraction candidate matched source key)
+- `TwoSlice_PluginReuse_2026-02-11` (No extraction candidate matched source key)
+- `Wu_SorcererMetaphor_2026-02-11` (No extraction candidate matched source key)
+- `YC_CodeToProduction_2026-02-12` (No extraction candidate matched source key)
+- `YC_DeveloperWorkflow_2026-02-12` (No extraction candidate matched source key)
+- `YC_OrganizationalAgility_2026-02-12` (No extraction candidate matched source key)

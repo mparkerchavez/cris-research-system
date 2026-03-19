@@ -1,0 +1,12 @@
+.env
+.env.local
+node_modules
+convex/_generated
+migration/source_id_map.json
+migration/source_parse_report.json
+migration/artifacts/
+migration/dp_id_map.json
+migration/datapoint_parse_report.json
+migration/datapoint_tag_staging.json
+migration/weekly_learning_report.json
+migration/reports/

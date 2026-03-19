@@ -1,0 +1,90 @@
+# OpenAI won again.
+
+## Metadata
+
+* **Channel:** Theo - t3.gg
+* **Published:** 2026-02-06
+* **Duration:** 43:33
+* **URL:** [https://youtu.be/RYWrK2hsIB8?si=vFYJ_TJwCpwQ0N5w](https://youtu.be/RYWrK2hsIB8?si=vFYJ_TJwCpwQ0N5w)
+* **Transcript Extracted:** 2026-02-06
+
+---
+
+## Transcript
+
+[[00:00](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=0)] Sonnet 5 has finally hit—okay, no, not Sonnet 5. I know we're all going kind of mad. It's a new release from OpenAI. You might remember just a few days ago I covered a release from OpenAI that I was lucky enough to have early access to: the new Codex app. And I do actually love it. I've been using this to build a ton of shit across multiple different computers, and now that I'm starting to use Linux more, I'm actually missing this app a lot because it is still Mac-only.
+
+Why am I talking about this app though? Well, as I mentioned in the video where I covered it in depth, I had early access and I had to hide that from you guys, which is why I got the second laptop. But that wasn't the only thing I was hiding. I have to come clean: I had early access to 5.3, and I've been using it for almost everything I have built for the last two to three weeks. In my opinion, it's pretty damn good. I don't think it's this massive leap forward that I'm seeing a lot of others claim it to be, but I do think it's great. Opinions seem varied, from ThePrimeagen saying it'd be really funny if 5.3 was literally just 5.2 and it's an experiment to see how much we care, to Matt Shumer saying that it's an effing monster—it can go for eight-plus hours and he comes back to working code and live deployments. It's significantly more autonomous than 4.5. But it's not all positive. I'm leaning this direction, but I have a lot of thoughts.
+
+[[01:09](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=69)] As I mentioned before, I've been using this model for a ton of different shit over the last few weeks: from configuring new systems, to spinning up side projects, to trying to migrate eight-plus-year-old codebases to modern standards. I have a lot to say, but just to make sure things are explicitly clear: OpenAI hasn't given me any specific restrictions on what I talk about, how I feel, or how to present things. This is all my organic opinion. The only thing that I'm paid to talk about is today's sponsor.
+
+[[01:34](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=94)] When's the last time you saw a project that made you emotional? I know when it was for me: it was General Translation. I know this sounds insane, especially because they're a sponsor, but I've been through it with translations. Building a system to handle all the different languages that exist around the world at Twitch was really, really hard—one of the hardest things I've ever been part of—and it broke all of the time. General Translation made it go from a nightmare to a couple lines of code. Need to have your title translated? Wrap it with their `T` helper and you're good to go. Even if you're composing and you have variables that you don't want translated, all of this is handled with their helper components. From here, the translations are easy to swap in. You don't have to do any real work; they handle it all for you with their agents running on your project.
+
+If you ever feel like you need more context, it's just a prop on the `T` component. Yes, it's that easy to add context. You can do complex nesting without any issues at all, which is so nice. These things... I was so deep in the hell of wrapping every single string with a helper function before. This feels magical. In retrospect, it's crazy. Need to format a currency properly, or a date, or a number, or a variable? It's all just handled for you, and your build script can go and generate the translations as soon as you're done. I'm not bluffing about the emotions, by the way. The entire phone call I did with these guys, my jaw was dropping to my desk. Check them out now at [link].
+
+[[03:17](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=197)] Normally the flow for this video would look something like: we read the article, we react to Twitter, I show you what it looks like in a handful of small projects, and we move on. But I'm not going to do this video that way because my own experience with this model was nothing like that at all. OpenAI gave me access before they gave me any real information. The only thing they told me when I got this access was that it was a better conversational partner when you were working, and it would give you a bit more detail about what it was doing when it did it. I was given no additional information about its capabilities, what it would be better or worse at beyond that. So I decided to just try it. And try it I certainly did—for many hours, across many projects, many times.
+
+One of the first things you'll notice is exactly what they said: it is much better at telling you what it's doing and what's going on. If we look at this thread here where I showed it an error I was getting running the dev command, it started looking at the paths that involved these particular keywords in the screenshot, found them, and said exactly that: "I found the exact failure path... index.ts calls this thing that it shouldn't... this is a mistake." Funny enough, that's a mistake another model that just recently came out made, that we will be doing a more thorough comparison with in the near future. But the fact that it gives these callouts—it'll go do one or two tool calls, tell me what it did and what it will do next, then go do that thing—is great. It's good about this back and forth. This is more what I expected Opus to do, and I've historically not had the Codex models be as good at this.
+
+[[05:01](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=301)] All of my work has been in 5.3. I'll show you what it looks like to use 5.2 instead by selecting it. I'll grab the same exact audit prompt so we can do the audit codebase comparison. With 5.3, it says: "Going to run a full codebase audit... I'll start remapping the repo and then dispatch focused agents..." Then it did a list, said some things, made another exploration list. This is the pattern: it does a tool call, tells you a bit, does a tool call, tells you a bit.
+
+With 5.2, we got no text initially at all. It just immediately goes into exploring and touches a ton of files. It will then think about it for a bit, then go touch more files. You don't even know if it's going in the right direction or not until it's done. One of the really cool things about 5.3 is how receptive it is to being stopped and told it is doing something wrong.
+
+[[07:34](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=454)] It thinks initially, but in just a moment it starts telling me information. It's actually telling me what it's doing and why. You'll also notice it is a lot faster. It’s more efficient with its token usage; it seems to actually generate tokens faster, and it feels faster because you're getting information sooner. Look at all of this text we've got about what's going on just a few seconds in, and this previous audit (on 5.2) still has not spit out a single line of text. That's a huge difference. It's going to make this model feel much better, and I do think that's a large portion of what OpenAI is thinking about right now because they've been getting crushed in "model feel" by Opus.
+
+As somebody who deeply knows the Codex models are smarter, I still use Opus for a bunch of shit because it's just nicer to play with. A big part of why was this more back-and-forth nature. Codex has now almost entirely caught up with that. I still don't like it as much for general computer use stuff because it tries a little too hard to be thorough, which is great when you're making real changes to real codebases, but it's not as good when I'm trying to find a file on my computer.
+
+[[10:50](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=650)] I'm not just saying that because it built some side projects well. I'm saying that because it completed one of my impossible tasks. This is the original Ping.gg codebase, my video call app that I built with the first-ever version of the T3 stack. It has an ancient version of Prisma, an ancient version of tRPC (that's like three SDK syntax changes ago), Next.js 11, React 15 or 16 at best, Tailwind 2, and a bunch of other random ancient shit. It is not fun to work in. Half the libraries we used heavily have entirely changed the syntax. We also had `patch-package` for random things.
+
+It was one of my favorite tasks to throw at these new smart models, knowing they wouldn't be able to do it. And now I just wish I preserved the chat history, because they did. I was able to successfully migrate all of the major packages for this project up and get it working pretty close to one-shot. None of the other models I've tested this on even got vaguely close to this point.
+
+[[12:12](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=732)] There's a lot of little things it did that I hadn't seen models do. First off, its willingness to patch—and make decent patches too. It didn't try to force migrate them and end up in a doom spiral like Opus and 5.2 all did. It instead would `patch-package` the old dependency that was having problems, finish the work on the other thing it was changing, and then go back and update that so it could deprecate the patches. I've only known a handful of engineers that work that particular way. It felt strategic and well-applied. This codebase actually works with all of these things migrated.
+
+[[14:16](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=856)] I also got nerd-sniped by Shoe.dev. This is a project I have wanted for a very, very long time. I want it to be easier to add Auth to my sites via Google OAuth without having to go register this stuff in the Google dashboard. I built Shoe as a solution to do this—it's a "Shoe in," it is meant to "Shoe off" all these Auth problems. It'll be open source very soon. Almost every single line of code in this project was written by 5.3. I don't know if I would have built this if it wasn't for 5.3 making it both pleasant and thorough.
+
+However, 5.3 is still not great at design. I had it make a bunch of alternative designs to this homepage... "Rough," "Pretty mid," "Really rough," "Horrible." Yeah, I'm not using this model for design.
+
+[[16:53](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=1013)] I want to go over everything else that other people had to say. We should start with the official OpenAI comms. They introduced a new model: "5.3, the most capable agentic coding model to date... 25% faster... much like a colleague you can steer and interact with." Honestly, that's the only thing they mentioned when we first started talking to them—that it feels more like a colleague. I've been doing that a lot and I'm actually really enjoying it.
+
+Another very interesting detail is that 5.3 Codex is the first model that was instrumental in creating itself. The Codex team used early versions to debug its own training, manage its own deployment, and diagnose test results.
+
+[[18:54](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=1134)] 5.3 Codex achieved state-of-the-art performance on SWE-bench Pro, but the most interesting piece is that it used way fewer tokens. OpenAI has been optimizing for this. We're getting scores equivalent to 5.2 Codex on the highest reasoning level (getting nearly 100,000 output tokens burned) versus the new model getting a similar score of 56% with one-fourth as many tokens—22k versus 100k for the same level of intelligence. 5.3 on "Extra High" did slightly better, but I hope this helps emphasize how useless the Extra High modes are. I really do use Medium and High as my daily drivers.
+
+[[21:15](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=1275)] There's a reason we haven't seen a lot of people publishing benchmarks on these models just yet. One person did though: my channel manager and fellow tech YouTuber, Ben. He proved that Claude Haiku was a very efficient model for his benchmark. The slowest models he has run this on are 5.2 Codex, Gemini 3 Flash (which is surprisingly slow now), and Opus 4.6. But 5.2 to 5.3 showed almost a 2x increase in speed, almost a 50% reduction in runtime. 5.2 Codex did 12-ish tool calls on average to find the context, and 5.3 did 5.5. It uses way fewer tool calls but did not see a meaningful reduction in accuracy; in fact, it ended up being more accurate overall.
+
+[[23:26](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=1406)] This is the problem: you cannot use this model over API. OpenAI, I love you guys, but you need to stop putting these out without APIs. At the very least, you need to give trusted researchers access to an API endpoint so they can validate it. Right now, we kind of just have to take your word on it. I can't use it for the "Agentic Misalignment Bench" or "SnitchBench" or "SkateBench." It is locked down. I'm going to pull the Opus card because Anthropic figured this out—there is no excuse.
+
+[[25:09](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=1509)] I do want to talk more about using Codex to train Codex because this part is really, really cool. One of the post-training researchers at OpenAI named Carol did over $10,000 of inference on GPT-5.3 Codex in order to automate his research. The first thing he calls out is they do continual note-taking using these tools. The big unlock was getting Codex to continually document and improve its own workflows. Codex commits notes and helpers to his personal folder in their monorepo after a few interactions with a new part of the codebase. These helpers tend to stabilize. I've been doing the same thing too—I let the model control the `agent.md` file based on its own confusion.
+
+[[28:42](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=1722)] Flavio did a pretty good article about this himself. He tested the model on its visual understanding by having 5.2 and 5.3 try to recreate the Codex homepage. What he didn't expect: 5.3 Codex finished generating the site and then didn't stop. It installed the rendering library via NPX, rendered the page it had just built, compared the image to the reference image, and started correcting itself. It noticed the primary button color didn't match and fixed it. It adjusted spacing. It completed the loop.
+
+[[30:17](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=1817)] Matt Shumer’s TL;DR: "This is the first coding model where I can start a run, walk away for hours, and come back to fully working software." A big upgrade is judgment under ambiguity. Test and validation are a massive unlock. I've found that pretty often, if I ask it to add tests to validate its findings, it'll often catch bugs that it had in the previous work and fix them without me even looking.
+
+[[34:00](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=2040)] My problems with Codex 5.3 and OpenAI.
+First: The API thing. Don't put out numbers I cannot verify. Mistral is the worst at this, but OpenAI is now a major lab that does this. When there's a new Anthropic release, it's on API and Claude Code the same day. Now I legitimately do not know how I would evaluate 5.3 beyond using Codex to throw it at various codebases.
+
+[[35:41](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=2141)] The next piece: Refusals. They mention in their article that Codex can do nearly anything "unless it perceives as something it shouldn't be doing." I've seen it happen where if the model thinks the thing is illegal or against TOS, it'll outright refuse. One of my friends was vibe coding a site to make a fake UPS "We missed you" label for a gag, and Codex refused. We tried in Claude Code and it one-shot it with no issue. The example the Every guys gave was trying to get the model to introduce a keyboard restoration feature—5.3 refused because it "might be against terms of service." I suspect these refusals would make these models less useful for work in biology, medicine, or physics, preventing positive developments because the model is trying too hard to be safe.
+
+[[38:39](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=2319)] One last frustration: Where the fuck are my reasoning tokens? Google not doing this makes sense. Anthropic giving you reasoning tokens is a little unexpected. OpenAI, why are you the only lab that has never once shipped full reasoning traces? My conspiracy theory is that the reasoning traces are a mess—ugly, broken formats, maybe changing languages—and the summaries we get are another model cleaning it up to hide the disaster. Please, guys, seriously, show me the reasoning like everyone else is doing. It makes the UX worse.
+
+[[42:24](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=2544)] One last tiny thing: Please give us a new Mini or Nano model. GPT-5 Mini and Nano were incredible when they dropped. There's a phenomenal opportunity to use the techniques for 5.3 to make a 5.3 Mini or Nano that is lightyears ahead of the competition.
+
+[[43:07](http://www.youtube.com/watch?v=RYWrK2hsIB8&t=2587)] The model's pretty damn good. It is my default. This is the best AI coding model ever made, and I will continue using it until the best one comes out in a few weeks from now.
+
+---
+
+## Notable Timestamps
+
+* 00:00 - Intro & The 5.3 Reveal
+* 01:34 - Sponsor: General Translation
+* 03:17 - Hands-on: 5.3 vs 5.2 (Speed & "Model Feel")
+* 10:50 - The Impossible Task: Migrating the ancient Ping.gg codebase
+* 14:16 - Building Shoe.dev with 5.3
+* 16:53 - Official OpenAI Announcements & Benchmarks
+* 25:09 - Research: Carol using Codex to train Codex
+* 28:42 - Visual Understanding & "Completing the Loop" (Flavio's test)
+* 30:17 - Matt Schumer’s review: Autonomy & Testing
+* 34:00 - Complaint 1: Lack of API Access & Verification
+* 35:41 - Complaint 2: Over-sensitive Refusals
+* 38:39 - Complaint 3: Missing Reasoning Tokens (Conspiracy Theory)
+* 42:24 - Request for 5.3 Mini/Nano Models

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -t /Users/macbooksmacbookpromax/Downloads/CRIS_Research_System/03_Weekly_Learnings/2026-Q1/*.md)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(python3 poc/scripts/validate_citation_contract.py --file 03_Weekly_Learnings/2026-Q1/WL_2026-02-28.md)",
+      "Bash(bash poc/scripts/style_audit.sh 03_Weekly_Learnings/2026-Q1/WL_2026-02-28.md)",
+      "Bash(bash poc/scripts/prepublish_lineage_gate.sh 03_Weekly_Learnings/2026-Q1/WL_2026-02-28.md)",
+      "Bash(ls -t /Users/macbooksmacbookpromax/Downloads/CRIS_Research_System/09_Deliverables/Talking_Points/TP_*.md)",
+      "Bash(python3 poc/scripts/validate_citation_contract.py --file 06_Current_Understanding/Current_Synthesis.md)",
+      "Bash(python3 poc/scripts/validate_citation_contract.py --file 09_Deliverables/Talking_Points/TP_2026-02-28.md)",
+      "Bash(bash poc/scripts/prepublish_lineage_gate.sh)"
+    ]
+  }
+}

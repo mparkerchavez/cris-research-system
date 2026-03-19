@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRIS — Research Observatory</title>
+  <link rel="stylesheet" href="styles.css?v=20260212-talking-points-conversation-starters-v1">
+  <link rel="icon" href="CRIS_avatar.png" type="image/png">
+</head>
+<body>
+  <div class="cr-app" id="app">
+    <!-- Header -->
+    <header class="cr-shell-topbar">
+      <div class="cr-shell-brand">
+        <img src="CRIS_avatar.png" alt="CRIS" class="cr-shell-brand-logo">
+        <span class="cr-shell-brand-wordmark">CRIS</span>
+      </div>
+
+      <nav class="cr-shell-nav" id="mainNav">
+        <a href="/?view=pulse" class="cr-shell-nav-link is-active" data-view="pulse" aria-current="page">Pulse</a>
+        <a href="/?view=ideas" class="cr-shell-nav-link" data-view="ideas">Ideas</a>
+        <a href="/?view=talking-points" class="cr-shell-nav-link" data-view="talking-points">Talking Points</a>
+        <a href="/?view=explore" class="cr-shell-nav-link" data-view="explore">Explore</a>
+      </nav>
+
+      <div class="cr-shell-actions">
+        <div class="cr-shell-status" id="statusIndicator">
+          <span class="cr-shell-status-dot"></span>
+          <span id="fileCount">0</span> files
+        </div>
+        <button class="cr-btn cr-btn--ghost" id="reindexBtn" title="Sync index">↻ Sync</button>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <main class="cr-main-layout" id="mainLayout">
+
+      <!-- Dark Control Panel (Left Sidebar) -->
+      <aside class="cr-filter-panel" id="controlPanel">
+        <div class="cr-filter-section">
+          <div class="cr-filter-section-title">Compression Chain</div>
+          <div class="cr-filter-list" id="compressionList">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <div class="cr-filter-section">
+          <div class="cr-filter-section-title">Tags</div>
+          <div class="cr-filter-list cr-filter-list--tags" id="tagsList">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <div class="cr-filter-section">
+          <div class="cr-filter-section-title">Sort</div>
+          <div class="cr-filter-list" id="sortList">
+            <button type="button" class="cr-filter-item is-active" data-sort="newest" aria-pressed="true">
+              <span class="cr-filter-item-label">
+                <span class="cr-filter-item-radio"></span>
+                Newest first
+              </span>
+            </button>
+            <button type="button" class="cr-filter-item" data-sort="oldest" aria-pressed="false">
+              <span class="cr-filter-item-label">
+                <span class="cr-filter-item-radio"></span>
+                Oldest first
+              </span>
+            </button>
+            <button type="button" class="cr-filter-item" data-sort="name" aria-pressed="false">
+              <span class="cr-filter-item-label">
+                <span class="cr-filter-item-radio"></span>
+                By name
+              </span>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Content Area -->
+      <div class="cr-content-area">
+
+        <!-- Pulse View (Home) -->
+        <div class="cr-view-pulse" id="pulseView">
+          <div class="cr-pulse-layout">
+            <div class="cr-pulse-main">
+              <!-- Position -->
+              <section class="cr-pulse-section cr-pulse-position" id="synthesisHero">
+                <div class="cr-synthesis-kicker">Current Position</div>
+                <h1 class="cr-synthesis-headline" id="synthesisHeadline">Loading current synthesis...</h1>
+                <p class="cr-synthesis-lede" id="synthesisLede"></p>
+                <div class="cr-synthesis-summary" id="synthesisSummary"></div>
+                <div class="cr-synthesis-meta cr-meta-cluster" id="synthesisMeta"></div>
+              </section>
+
+              <!-- Key Takeaways -->
+              <section class="cr-pulse-section cr-pulse-takeaways" id="pulseTakeawaysSection">
+                <div class="cr-section-header">
+                  <h2 class="cr-section-title">Key Takeaways</h2>
+                </div>
+                <div class="cr-synthesis-takeaways" id="synthesisTakeaways"></div>
+              </section>
+
+              <!-- Trends -->
+              <section class="cr-pulse-section cr-pulse-trends" id="pulseTrendsSection">
+                <div class="cr-section-header">
+                  <h2 class="cr-section-title">Trends</h2>
+                </div>
+                <div class="cr-trends-list" id="pulseTrendsList"></div>
+              </section>
+
+              <!-- Open Threads -->
+              <section class="cr-pulse-section cr-pulse-open-threads" id="pulseWeeklyOpenThreadsSection">
+                <div class="cr-section-header">
+                  <h2 class="cr-section-title">Open Threads</h2>
+                </div>
+                <ol class="cr-weekly-open-threads-list" id="pulseWeeklyOpenThreadsList"></ol>
+              </section>
+
+              <!-- Reflection -->
+              <section class="cr-pulse-section cr-pulse-reflection" id="pulseReflectionSection">
+                <div class="cr-section-header">
+                  <h2 class="cr-section-title">Reflection</h2>
+                </div>
+                <div class="cr-reflection-body" id="pulseReflectionContent"></div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explore View -->
+        <div class="cr-view-explore" id="exploreView">
+          <!-- File Browser -->
+          <div class="cr-explore-browser">
+            <div class="cr-explore-browser-header">
+              <input type="text" class="cr-search-input" id="searchInput" placeholder="Search file names, tags, and paths...">
+              <div class="cr-filter-summary" id="filterSummary">
+                <div class="cr-filter-summary-left">
+                  <span class="cr-filter-count" id="filterCount">0 files</span>
+                  <span class="cr-filter-hint" id="filterHint">All files</span>
+                </div>
+                <button class="cr-btn cr-btn--sm cr-btn--ghost" id="clearFiltersBtn" type="button">Clear</button>
+              </div>
+              <div class="cr-filter-chips" id="filterChips"></div>
+            </div>
+            <div class="cr-file-list" id="fileList">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Document Preview -->
+          <div class="cr-doc-preview" id="docPreview">
+            <div class="cr-empty" id="emptyPreview">
+              <div class="cr-empty-title">Select a document</div>
+              <div class="cr-empty-text">Choose a file from the list to preview its contents</div>
+            </div>
+
+            <div class="cr-doc-header" id="docHeader" style="display: none;">
+              <div class="cr-doc-header-top">
+                <div class="cr-doc-header-main">
+                  <div class="cr-doc-eyebrow" id="docType"></div>
+                  <h1 class="cr-doc-title" id="docTitle"></h1>
+                </div>
+                <div class="cr-doc-actions">
+                  <button class="cr-btn cr-btn--sm" id="toggleRawBtn">View Markdown</button>
+                  <button class="cr-btn cr-btn--sm" id="copyMarkdownBtn">Copy Markdown</button>
+                </div>
+              </div>
+              <div class="cr-inset-tray cr-doc-meta-tray">
+                <div class="cr-inset-tray-grid">
+                  <div class="cr-inset-tray-item cr-doc-meta-file">
+                    <div class="cr-doc-meta-line cr-doc-meta-file-path" id="docPath"></div>
+                    <button class="cr-doc-meta-copy-btn" id="copyFilenameBtn" type="button" aria-label="Open file on computer" title="Open file on computer">
+                      <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                        <path d="M2.5 5.5v8h8"></path>
+                        <path d="M6 2.5h7.5V10"></path>
+                        <path d="M13.5 2.5L6.5 9.5"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="cr-inset-tray-item">
+                    <div class="cr-doc-meta-line" id="docStats"></div>
+                  </div>
+                </div>
+                <div class="cr-doc-tags-wrap" id="docTagsWrap">
+                  <div class="cr-doc-tags" id="docTags"></div>
+                  <button class="cr-btn cr-btn--sm cr-btn--ghost cr-doc-tags-toggle" id="docTagsToggleBtn" type="button" aria-expanded="false" hidden>
+                    Show all tags
+                  </button>
+                </div>
+                <div class="cr-doc-trace-row">
+                  <button class="cr-btn cr-btn--sm" id="openTraceBtn" type="button">Trace claims/citations</button>
+                  <span class="cr-doc-trace-summary" id="traceSummary">No claims detected</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cr-doc-content" id="docContent"></div>
+          </div>
+        </div>
+
+        <!-- Ideas View -->
+        <div class="cr-view-ideas" id="ideasView">
+          <div class="cr-ideas-layout">
+            <aside class="cr-ideas-list-panel">
+              <div class="cr-ideas-list-header">
+                <h2 class="cr-section-title">Active Ideas</h2>
+                <div class="cr-ideas-list-meta" id="ideasListMeta"></div>
+              </div>
+              <div class="cr-ideas-list" id="ideasList">
+                <!-- Populated by JS -->
+              </div>
+            </aside>
+
+            <section class="cr-ideas-detail" id="ideasDetail">
+              <div class="cr-empty" id="ideasEmpty">
+                <div class="cr-empty-title">Select an idea</div>
+                <div class="cr-empty-text">Choose an idea from the list to view full detail.</div>
+              </div>
+              <div class="cr-idea-detail-content" id="ideaDetailContent" style="display: none;">
+                <!-- Populated by JS -->
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- Talking Points View -->
+        <div class="cr-view-talking-points" id="talkingPointsView">
+          <div class="cr-ideas-layout">
+            <aside class="cr-ideas-list-panel">
+              <div class="cr-ideas-list-header">
+                <h2 class="cr-section-title">Talking Points</h2>
+                <div class="cr-ideas-list-meta" id="talkingPointsListMeta"></div>
+              </div>
+              <div class="cr-ideas-list" id="talkingPointsList">
+                <!-- Populated by JS -->
+              </div>
+            </aside>
+
+            <section class="cr-ideas-detail" id="talkingPointsDetail">
+              <div class="cr-empty" id="talkingPointsEmpty">
+                <div class="cr-empty-title">Select a talking point</div>
+                <div class="cr-empty-text">Choose a talking point from the list to view full detail.</div>
+              </div>
+              <div class="cr-idea-detail-content cr-talking-point-detail-content" id="talkingPointDetailContent" style="display: none;">
+                <!-- Populated by JS -->
+              </div>
+            </section>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Lineage Drawer -->
+    <div class="cr-drawer cr-drawer--lineage" id="lineageDrawer">
+      <div class="cr-drawer-backdrop" id="lineageBackdrop"></div>
+      <div class="cr-drawer-panel">
+        <div class="cr-drawer-header">
+          <h2 class="cr-drawer-title">Lineage Trace</h2>
+          <button class="cr-btn cr-btn--ghost" id="closeLineageDrawer">✕</button>
+        </div>
+        <div class="cr-drawer-body" id="lineageDrawerBody">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Idea Drawer -->
+    <div class="cr-drawer cr-drawer--idea" id="ideaDrawer">
+      <div class="cr-drawer-backdrop" id="ideaBackdrop"></div>
+      <div class="cr-drawer-panel">
+        <div class="cr-drawer-header">
+          <h2 class="cr-drawer-title" id="ideaDrawerTitle">Idea</h2>
+          <button class="cr-btn cr-btn--ghost" id="closeIdeaDrawer">✕</button>
+        </div>
+        <div class="cr-drawer-body" id="ideaDrawerBody">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Takeaway Drawer -->
+    <div class="cr-drawer cr-drawer--takeaway" id="takeawayDrawer">
+      <div class="cr-drawer-backdrop" id="takeawayBackdrop"></div>
+      <div class="cr-drawer-panel">
+        <div class="cr-drawer-header">
+          <h2 class="cr-drawer-title" id="takeawayDrawerTitle">Takeaway</h2>
+          <button class="cr-btn cr-btn--ghost" id="closeTakeawayDrawer">✕</button>
+        </div>
+        <div class="cr-drawer-body" id="takeawayDrawerBody">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Trend Drawer -->
+    <div class="cr-drawer cr-drawer--trend" id="trendDrawer">
+      <div class="cr-drawer-backdrop" id="trendBackdrop"></div>
+      <div class="cr-drawer-panel">
+        <div class="cr-drawer-header">
+          <h2 class="cr-drawer-title" id="trendDrawerTitle">Trend</h2>
+          <button class="cr-btn cr-btn--ghost" id="closeTrendDrawer">✕</button>
+        </div>
+        <div class="cr-drawer-body" id="trendDrawerBody">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Current Position Drawer -->
+    <div class="cr-drawer cr-drawer--position" id="positionDrawer">
+      <div class="cr-drawer-backdrop" id="positionBackdrop"></div>
+      <div class="cr-drawer-panel">
+        <div class="cr-drawer-header">
+          <h2 class="cr-drawer-title" id="positionDrawerTitle">Current Position Sources</h2>
+          <button class="cr-btn cr-btn--ghost" id="closePositionDrawer">✕</button>
+        </div>
+        <div class="cr-drawer-body" id="positionDrawerBody">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+  <script src="app.js?v=20260212-talking-points-conversation-starters-v1"></script>
+</body>
+</html>

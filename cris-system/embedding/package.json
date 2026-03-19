@@ -1,0 +1,13 @@
+{
+  "name": "cris-embedding",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "embed": "node --experimental-strip-types embed_datapoints.ts",
+    "mark-done": "node --experimental-strip-types mark_done.ts"
+  },
+  "dependencies": {
+    "convex": "^1.26.2",
+    "openai": "^4.0.0"
+  }
+}
